@@ -49,6 +49,12 @@ public class Enemy : MonoBehaviour
                 {
                     aggroedToPlayer = true;
                 }
+            } else
+            {
+                if (!playerChase.bounds.Contains(player.transform.position))
+                {
+                    aggroedToPlayer = false;
+                }
             }
 
             GameObject target;
