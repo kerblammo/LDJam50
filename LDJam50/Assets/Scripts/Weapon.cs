@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Texture2D cursor;
     [SerializeField] Bullet bullet;
     [SerializeField] WeaponProperties properties;
+    GameManager manager;
 
     bool canShoot;
 
@@ -17,11 +18,12 @@ public class Weapon : MonoBehaviour
         Cursor.SetCursor(cursor, hotspot, CursorMode.ForceSoftware);
 
         canShoot = true;
+        manager = FindObjectOfType<GameManager>();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot)
+        if (Input.GetMouseButtonDown(0) && canShoot && !manager.IsPaused)
         {
             FireWeapon();
             StartCoroutine(WeaponCooldownCoroutine());

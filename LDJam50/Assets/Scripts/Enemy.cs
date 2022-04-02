@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     GameObject preferredTarget;
     GameObject player;
+    GameManager manager;
     bool activated = false;
     [SerializeField] float speed;
     bool aggroedToPlayer = false;
@@ -13,12 +14,17 @@ public class Enemy : MonoBehaviour
     [SerializeField] Collider2D playerChase;
     [SerializeField] float health;
 
+    private void Start()
+    {
+        manager = FindObjectOfType<GameManager>();
+    }
     public void Activate()
     {
         activated = true;
     }
     public void AcquireTarget()
     {
+        preferredTarget = null;
         player = FindObjectOfType<PlayerMovement>().gameObject;
         DefensivePoint[] defensivePoints = FindObjectsOfType<DefensivePoint>();
         float min = Mathf.Infinity;
@@ -42,7 +48,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (activated)
+        if (activated && !manager.IsPaused)
         {
             if (!aggroedToPlayer)
             {
@@ -80,9 +86,4 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
-
-
-
 }

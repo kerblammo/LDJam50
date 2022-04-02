@@ -8,21 +8,20 @@ public class Spawner : MonoBehaviour
     [SerializeField] int spawnCount;
     [SerializeField] int waveCount = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    public void NextWave()
     {
+        waveCount++;
+    }
+    public List<Enemy> SpawnWave()
+    {
+        List<Enemy> enemies = new List<Enemy>();
         for (int i = 0; i < spawnCount; i++)
         {
             Enemy karen = Instantiate(enemy, transform.position, Quaternion.identity);
-            karen.AcquireTarget();
-            karen.Activate();
+            enemies.Add(karen);
         }
-        
+
+        return enemies;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
