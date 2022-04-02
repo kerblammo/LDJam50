@@ -41,7 +41,7 @@ public class Weapon : MonoBehaviour
         foreach (Vector3 target in targets)
         {
             Bullet projectile = Instantiate(bullet, transform.position, Quaternion.identity);
-            projectile.Shoot(target.normalized);
+            projectile.Shoot(target.normalized, properties.damage);
         }
         
     }

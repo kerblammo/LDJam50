@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     bool aggroedToPlayer = false;
     [SerializeField] Collider2D playerAggro;
     [SerializeField] Collider2D playerChase;
+    [SerializeField] float health;
 
     public void Activate()
     {
@@ -68,6 +69,15 @@ public class Enemy : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, 
                                                      target.transform.position, 
                                                      speed * Time.deltaTime);
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0) 
+        {
+            Destroy(gameObject);
         }
     }
 

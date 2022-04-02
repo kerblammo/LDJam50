@@ -236,6 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2522121069042587679, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
+  spawnCount: 10
+  waveCount: 0
 --- !u!4 &1552809391
 Transform:
   m_ObjectHideFlags: 0
