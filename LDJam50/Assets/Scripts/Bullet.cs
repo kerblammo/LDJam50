@@ -17,7 +17,8 @@ public class Bullet : MonoBehaviour
     {
         this.target = target;
         rb.AddForce(target * speed);
-        transform.right = target - transform.position;
+        float rot_z = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
         StartCoroutine(CleanUpSelfCoroutine());
     }
 
