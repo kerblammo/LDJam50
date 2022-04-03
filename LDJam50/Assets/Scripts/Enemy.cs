@@ -18,11 +18,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] int cashReward = 10;
     [SerializeField] AudioSource hitSound;
     [SerializeField] AudioSource fleeSound;
+    Animator animator;
     public bool IsDefeated { get => isDefeated; }
 
     private void Start()
     {
         manager = FindObjectOfType<GameManager>();
+        animator = GetComponent<Animator>();
     }
     public void DeActivate()
     {
@@ -86,6 +88,18 @@ public class Enemy : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, 
                                                      target.transform.position, 
                                                      speed * Time.deltaTime);
+
+            float lookDirection;
+            if (transform.position.x < target.transform.position.x)
+            {
+                lookDirection = 1f;
+            } else
+            {
+                lookDirection = -1f;
+            }
+            Vector3 scale = transform.localScale;
+            scale.x = lookDirection;
+            transform.localScale = scale;
         }
 
         if (isDefeated)
@@ -114,5 +128,17 @@ public class Enemy : MonoBehaviour
         manager.EnemyDefeated(cashReward);
         DeActivate();
         fleeSound.Play();
+        animator.SetTrigger("Flee");
+        float lookDirection;
+        if (transform.position.x < player.transform.position.x)
+        {
+            lookDirection = -1f;
+        } else
+        {
+            lookDirection = 1f;
+        }
+        Vector3 scale = transform.localScale;
+        scale.x = lookDirection;
+        transform.localScale = scale;
     }
 }
