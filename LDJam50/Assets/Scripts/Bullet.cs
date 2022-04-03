@@ -47,6 +47,7 @@ public class Bullet : MonoBehaviour
             if (enemy.IsDefeated) { return; }
             enemy.TakeDamage(damage);
             damage = 0;
+            GetComponent<Collider2D>().enabled = false;
             rb.velocity = Vector3.zero;
             rb.angularVelocity = 0;
             transform.parent = enemy.transform;
