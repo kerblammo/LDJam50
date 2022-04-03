@@ -22,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 step = new Vector3(horizontal, vertical, 0);
             step = step.normalized;
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + step * speed, speed * Time.deltaTime);
 
-            rb2d.AddForce(step * speed * Time.deltaTime);
         }
         
 

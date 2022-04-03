@@ -4033,6 +4033,7 @@ MonoBehaviour:
   spawner: {fileID: 394572628}
   shopUI: {fileID: 750898112}
   RoundSurvivedBonus: 100
+  SpawnEnemiesWindow: 10
 --- !u!1 &1657562514
 GameObject:
   m_ObjectHideFlags: 0
@@ -5026,14 +5027,6 @@ PrefabInstance:
     - target: {fileID: 4624682228101180159, guid: d755fbaa804b1054fa3e926a731909c2, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7314700391340477939, guid: d755fbaa804b1054fa3e926a731909c2, type: 3}
-      propertyPath: speed
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7672181635023959109, guid: d755fbaa804b1054fa3e926a731909c2, type: 3}
-      propertyPath: m_Mass
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d755fbaa804b1054fa3e926a731909c2, type: 3}
