@@ -2327,15 +2327,15 @@ MonoBehaviour:
       cost: 1000
   projectiles:
     Levels:
-    - value: 4
-      cost: 100
     - value: 5
-      cost: 200
-    - value: 6
-      cost: 400
+      cost: 100
     - value: 7
-      cost: 600
+      cost: 200
     - value: 9
+      cost: 400
+    - value: 11
+      cost: 600
+    - value: 15
       cost: 1000
   damage:
     Levels:
