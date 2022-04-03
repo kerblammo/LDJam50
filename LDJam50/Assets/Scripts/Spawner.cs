@@ -28,7 +28,6 @@ public class Spawner : MonoBehaviour
     Vector3 CalculateRandomSpawnPosition()
     {
         int i = Random.Range(0, spawnZones.Count);
-        Debug.Log(i);
         Collider2D spawnZone = spawnZones[i];
         Bounds bounds = spawnZone.bounds;
         return new Vector3(
