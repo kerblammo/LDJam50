@@ -13,13 +13,20 @@ public class Enemy : MonoBehaviour
     [SerializeField] Collider2D playerAggro;
     [SerializeField] Collider2D playerChase;
     [SerializeField] float health;
+    bool isDefeated = false;
+    public bool IsDefeated { get => isDefeated; }
 
     private void Start()
     {
         manager = FindObjectOfType<GameManager>();
     }
+    public void DeActivate()
+    {
+        GetComponent<Collider2D>().enabled = false;
+    }
     public void Activate()
     {
+        GetComponent<Collider2D>().enabled = true;
         activated = true;
     }
     public void AcquireTarget()
@@ -48,7 +55,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (activated && !manager.IsPaused)
+        if (activated && !manager.IsPaused && !isDefeated)
         {
             if (!aggroedToPlayer)
             {
@@ -76,6 +83,12 @@ public class Enemy : MonoBehaviour
                                                      target.transform.position, 
                                                      speed * Time.deltaTime);
         }
+
+        if (isDefeated)
+        {
+            Vector3 fleeDirection = (transform.position - player.transform.position).normalized * 100;
+            transform.position = Vector3.MoveTowards(transform.position, fleeDirection, speed * Time.deltaTime * 10);
+        }
     }
 
     public void TakeDamage(float damage)
@@ -83,7 +96,14 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0) 
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    void Die()
+    {
+        isDefeated = true;
+        manager.EnemyDefeated();
+        DeActivate();
     }
 }
