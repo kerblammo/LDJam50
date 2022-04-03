@@ -10,11 +10,13 @@ public class PlayerMovement : MonoBehaviour
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
+    Animator animator;
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         manager = FindObjectOfType<GameManager>();
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -25,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 step = new Vector3(horizontal, vertical, 0);
             step = step.normalized;
+            bool isMoving = step != Vector3.zero;
+            animator.SetBool("isMoving", isMoving);
             transform.position = Vector3.MoveTowards(transform.position, transform.position + step * speed, speed * Time.deltaTime);
 
         } 

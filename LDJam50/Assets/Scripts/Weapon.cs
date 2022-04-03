@@ -23,6 +23,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        LookToCursor();
         if (Input.GetMouseButton(0) && canShoot && !manager.IsPaused)
         {
             FireWeapon();
@@ -30,6 +31,23 @@ public class Weapon : MonoBehaviour
         }
 
 
+    }
+
+    void LookToCursor()
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0;
+        float lookDirection;
+        if (mousePosition.x > transform.position.x)
+        {
+            lookDirection = 1;
+        } else
+        {
+            lookDirection = -1;
+        }
+        Vector3 scale = transform.localScale;
+        scale.x = lookDirection;
+        transform.localScale = scale;
     }
 
     private void FireWeapon()
