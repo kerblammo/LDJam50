@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Enemy : MonoBehaviour
 {
     GameObject preferredTarget;
@@ -15,6 +16,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] float health;
     bool isDefeated = false;
     [SerializeField] int cashReward = 10;
+    [SerializeField] AudioSource hitSound;
+    [SerializeField] AudioSource fleeSound;
     public bool IsDefeated { get => isDefeated; }
 
     private void Start()
@@ -94,6 +97,10 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (!hitSound.isPlaying)
+        {
+            hitSound.Play();
+        }
         health -= damage;
         if (health <= 0) 
         {
@@ -106,5 +113,6 @@ public class Enemy : MonoBehaviour
         isDefeated = true;
         manager.EnemyDefeated(cashReward);
         DeActivate();
+        fleeSound.Play();
     }
 }
