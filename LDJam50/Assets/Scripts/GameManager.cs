@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     List<Enemy> enemies;
     [SerializeField] GameObject shopUI;
     [SerializeField] int RoundSurvivedBonus = 100;
+    [SerializeField] float SpawnEnemiesWindow = 10f;
     bool isPaused = false;
     public bool IsPaused { get => isPaused; }
 
@@ -61,6 +62,30 @@ public class GameManager : MonoBehaviour
         StartCoroutine(PollForRoundEnd());
     }
 
+    IEnumerator SpawnEnemiesOverTime()
+    {
+        float spawnInterval = SpawnEnemiesWindow / enemies.Count;
+        int enemiesSpawned = 0;
+        while (enemiesSpawned < enemies.Count)
+        {
+            enemies[enemiesSpawned].AcquireTarget();
+            enemies[enemiesSpawned].Activate();
+            enemiesSpawned++;
+            yield return new WaitForSeconds(spawnInterval);
+        }
+    }
+
+    public void EnemyDefeated()
+    {
+        int defeatedEnemies = 0;
+        foreach (Enemy enemy in enemies)
+        {
+            if (enemy.IsDefeated) { defeatedEnemies++; }
+        }
+
+        if (defeatedEnemies == enemies.Count) { RoundEnd(); }
+    }
+
     void BeginNextWave()
     {
         StopAllCoroutines();
@@ -68,15 +93,18 @@ public class GameManager : MonoBehaviour
         enemies = spawner.SpawnWave();
         foreach (Enemy enemy in enemies)
         {
-            enemy.AcquireTarget();
-            enemy.Activate();
+            enemy.DeActivate();
         }
 
-        StartCoroutine(PollForRoundEnd());
+        StartCoroutine(SpawnEnemiesOverTime());
     }
 
     void RoundEnd()
     {
+        foreach(Enemy enemy in enemies)
+        {
+            Destroy(enemy.gameObject, 1f);
+        }
         OpenShop();
     }
 

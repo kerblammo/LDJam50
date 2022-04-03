@@ -1375,6 +1375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 2522121069042587679, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
   spawnCount: 3
+  spawnLinearGrowth: 1
+  spawnExponentialGrowth: 1.5
   waveCount: 0
   spawnZones:
   - {fileID: 2069403862}
