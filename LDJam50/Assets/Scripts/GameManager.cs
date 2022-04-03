@@ -6,9 +6,19 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] Spawner spawner;
     List<Enemy> enemies;
+    [SerializeField] GameObject shopUI;
+    [SerializeField] int RoundSurvivedBonus = 100;
     bool isPaused = false;
     public bool IsPaused { get => isPaused; }
 
+    int currency = 0;
+    public int Currency { get => currency; }
+
+    public void SpendCurrency(int amount)
+    {
+        currency -= amount;
+        if (amount < 0) { amount = 0; }
+    }
     public void PauseGame()
     {
         isPaused = true;
@@ -21,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        currency = 0;
+        shopUI.SetActive(false);
         BeginNextWave();    
     }
 
@@ -65,6 +77,35 @@ public class GameManager : MonoBehaviour
 
     void RoundEnd()
     {
+        OpenShop();
+    }
+
+    public void OpenShop()
+    {
+        PauseGame();
+        if (!shopUI.activeInHierarchy)
+        {
+            GetPaid();
+            shopUI.SetActive(true);
+        }
+        
+    }
+
+    public void CloseShop()
+    {
+        shopUI.SetActive(false);
+        UnPauseGame();
         BeginNextWave();
+    }
+
+    void GetPaid()
+    {
+        DefensivePoint[] points = FindObjectsOfType<DefensivePoint>();
+        foreach (DefensivePoint point in points)
+        {
+            if (!point.IsDestroyed()) { currency += point.RescueValue; }
+        }
+        currency += RoundSurvivedBonus;
+
     }
 }

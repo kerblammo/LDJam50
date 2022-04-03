@@ -5,6 +5,8 @@ using UnityEngine;
 public class DefensivePoint : MonoBehaviour
 {
     bool isDestroyed = false;
+    [SerializeField] int rescueValue = 25;
+    public int RescueValue { get => rescueValue; }
 
     public bool IsDestroyed() => isDestroyed;
 

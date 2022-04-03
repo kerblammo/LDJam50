@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] Texture2D cursor;
     [SerializeField] Bullet bullet;
-    [SerializeField] WeaponProperties properties;
+    [SerializeField] public WeaponProperties properties;
     GameManager manager;
 
     bool canShoot;
