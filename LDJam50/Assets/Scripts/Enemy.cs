@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Enemy : MonoBehaviour
 {
     GameObject preferredTarget;
@@ -15,11 +16,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] float health;
     bool isDefeated = false;
     [SerializeField] int cashReward = 10;
+    [SerializeField] AudioSource hitSound;
+    [SerializeField] AudioSource fleeSound;
+    Animator animator;
     public bool IsDefeated { get => isDefeated; }
 
     private void Start()
     {
         manager = FindObjectOfType<GameManager>();
+        animator = GetComponent<Animator>();
     }
     public void DeActivate()
     {
@@ -83,6 +88,18 @@ public class Enemy : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, 
                                                      target.transform.position, 
                                                      speed * Time.deltaTime);
+
+            float lookDirection;
+            if (transform.position.x < target.transform.position.x)
+            {
+                lookDirection = 1f;
+            } else
+            {
+                lookDirection = -1f;
+            }
+            Vector3 scale = transform.localScale;
+            scale.x = lookDirection;
+            transform.localScale = scale;
         }
 
         if (isDefeated)
@@ -94,6 +111,10 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (!hitSound.isPlaying)
+        {
+            hitSound.Play();
+        }
         health -= damage;
         if (health <= 0) 
         {
@@ -106,5 +127,18 @@ public class Enemy : MonoBehaviour
         isDefeated = true;
         manager.EnemyDefeated(cashReward);
         DeActivate();
+        fleeSound.Play();
+        animator.SetTrigger("Flee");
+        float lookDirection;
+        if (transform.position.x < player.transform.position.x)
+        {
+            lookDirection = -1f;
+        } else
+        {
+            lookDirection = 1f;
+        }
+        Vector3 scale = transform.localScale;
+        scale.x = lookDirection;
+        transform.localScale = scale;
     }
 }
