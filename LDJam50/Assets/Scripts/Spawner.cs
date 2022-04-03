@@ -6,6 +6,8 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] Enemy enemy;
     [SerializeField] int spawnCount;
+    [SerializeField] float spawnLinearGrowth;
+    [SerializeField] float spawnExponentialGrowth;
     [SerializeField] int waveCount = 0;
     [SerializeField] List<Collider2D> spawnZones;
     public void NextWave()
@@ -14,8 +16,9 @@ public class Spawner : MonoBehaviour
     }
     public List<Enemy> SpawnWave()
     {
+        int enemiesToSpawn = (int)(spawnCount + (waveCount * spawnLinearGrowth) + (Mathf.Pow(spawnExponentialGrowth, waveCount)));
         List<Enemy> enemies = new List<Enemy>();
-        for (int i = 0; i < spawnCount; i++)
+        for (int i = 0; i < enemiesToSpawn; i++)
         {
             Vector3 spawnPoint = CalculateRandomSpawnPosition();
             Enemy karen = Instantiate(enemy, spawnPoint, Quaternion.identity);
