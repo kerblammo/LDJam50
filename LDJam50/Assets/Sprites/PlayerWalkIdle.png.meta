@@ -186,7 +186,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 448
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -205,9 +205,9 @@ TextureImporter:
       name: PlayerWalkIdle_1
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 448
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,9 +226,9 @@ TextureImporter:
       name: PlayerWalkIdle_2
       rect:
         serializedVersion: 2
-        x: 126
+        x: 128
         y: 448
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -247,9 +247,9 @@ TextureImporter:
       name: PlayerWalkIdle_3
       rect:
         serializedVersion: 2
-        x: 189
+        x: 192
         y: 448
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -270,7 +270,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 384
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -289,9 +289,9 @@ TextureImporter:
       name: PlayerWalkIdle_5
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 384
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -310,9 +310,9 @@ TextureImporter:
       name: PlayerWalkIdle_6
       rect:
         serializedVersion: 2
-        x: 126
+        x: 128
         y: 384
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -331,9 +331,9 @@ TextureImporter:
       name: PlayerWalkIdle_7
       rect:
         serializedVersion: 2
-        x: 189
+        x: 192
         y: 384
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -354,7 +354,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 320
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -373,9 +373,9 @@ TextureImporter:
       name: PlayerWalkIdle_9
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 320
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -394,9 +394,9 @@ TextureImporter:
       name: PlayerWalkIdle_10
       rect:
         serializedVersion: 2
-        x: 126
+        x: 128
         y: 320
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -415,9 +415,9 @@ TextureImporter:
       name: PlayerWalkIdle_11
       rect:
         serializedVersion: 2
-        x: 189
+        x: 192
         y: 320
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -438,7 +438,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 256
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -457,9 +457,9 @@ TextureImporter:
       name: PlayerWalkIdle_13
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 256
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -478,9 +478,9 @@ TextureImporter:
       name: PlayerWalkIdle_14
       rect:
         serializedVersion: 2
-        x: 126
+        x: 128
         y: 256
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -499,9 +499,9 @@ TextureImporter:
       name: PlayerWalkIdle_15
       rect:
         serializedVersion: 2
-        x: 189
+        x: 192
         y: 256
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -522,7 +522,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 192
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -541,9 +541,9 @@ TextureImporter:
       name: PlayerWalkIdle_17
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 192
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -562,9 +562,9 @@ TextureImporter:
       name: PlayerWalkIdle_18
       rect:
         serializedVersion: 2
-        x: 126
+        x: 128
         y: 192
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -583,9 +583,9 @@ TextureImporter:
       name: PlayerWalkIdle_19
       rect:
         serializedVersion: 2
-        x: 189
+        x: 192
         y: 192
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -606,7 +606,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 128
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -625,9 +625,9 @@ TextureImporter:
       name: PlayerWalkIdle_21
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 128
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -646,9 +646,9 @@ TextureImporter:
       name: PlayerWalkIdle_22
       rect:
         serializedVersion: 2
-        x: 126
+        x: 128
         y: 128
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -667,9 +667,9 @@ TextureImporter:
       name: PlayerWalkIdle_23
       rect:
         serializedVersion: 2
-        x: 189
+        x: 192
         y: 128
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -690,7 +690,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -709,9 +709,9 @@ TextureImporter:
       name: PlayerWalkIdle_25
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 64
-        width: 63.75
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
