@@ -44,12 +44,16 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy.IsDefeated) { return; }
             enemy.TakeDamage(damage);
             damage = 0;
+            GetComponent<Collider2D>().enabled = false;
             rb.velocity = Vector3.zero;
             rb.angularVelocity = 0;
             transform.parent = enemy.transform;
             StopAllCoroutines();
+            
+            
         }
     }
 

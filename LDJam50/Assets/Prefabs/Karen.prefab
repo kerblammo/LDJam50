@@ -102,6 +102,7 @@ MonoBehaviour:
   playerAggro: {fileID: 5568137196009696963}
   playerChase: {fileID: 3593603994811767514}
   health: 3
+  cashReward: 10
 --- !u!70 &-3726153902114704637
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

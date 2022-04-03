@@ -1907,7 +1907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 25483166759110110, guid: 58c2d701c0699114485327972b61b200, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 25483166759110110, guid: 58c2d701c0699114485327972b61b200, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2315,39 +2315,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rateOfFire:
     Levels:
-    - value: 1.8
-      cost: 100
-    - value: 1.6
-      cost: 200
     - value: 1.4
-      cost: 400
+      cost: 100
     - value: 1.2
+      cost: 200
+    - value: 1
+      cost: 400
+    - value: 0.8
       cost: 600
-    - value: 0.75
+    - value: 0.5
       cost: 1000
   projectiles:
     Levels:
-    - value: 4
-      cost: 100
     - value: 5
-      cost: 200
-    - value: 6
-      cost: 400
+      cost: 100
     - value: 7
-      cost: 600
+      cost: 200
     - value: 9
+      cost: 400
+    - value: 11
+      cost: 600
+    - value: 15
       cost: 1000
   damage:
     Levels:
-    - value: 1.25
-      cost: 100
-    - value: 1.5
-      cost: 200
     - value: 2
-      cost: 400
-    - value: 2.5
-      cost: 600
-    - value: 3.5
+      cost: 500
+    - value: 3
       cost: 1000
 --- !u!114 &750898117
 MonoBehaviour:
@@ -4033,6 +4027,7 @@ MonoBehaviour:
   spawner: {fileID: 394572628}
   shopUI: {fileID: 750898112}
   RoundSurvivedBonus: 100
+  SpawnEnemiesWindow: 10
 --- !u!1 &1657562514
 GameObject:
   m_ObjectHideFlags: 0
@@ -4489,7 +4484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 25483166759110110, guid: 58c2d701c0699114485327972b61b200, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 25483166759110110, guid: 58c2d701c0699114485327972b61b200, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4814,7 +4809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 25483166759110110, guid: 58c2d701c0699114485327972b61b200, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 25483166759110110, guid: 58c2d701c0699114485327972b61b200, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5027,14 +5022,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7314700391340477939, guid: d755fbaa804b1054fa3e926a731909c2, type: 3}
-      propertyPath: speed
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7672181635023959109, guid: d755fbaa804b1054fa3e926a731909c2, type: 3}
-      propertyPath: m_Mass
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d755fbaa804b1054fa3e926a731909c2, type: 3}
 --- !u!1001 &7813152256132460551
@@ -5050,7 +5037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 25483166759110110, guid: 58c2d701c0699114485327972b61b200, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 25483166759110110, guid: 58c2d701c0699114485327972b61b200, type: 3}
       propertyPath: m_LocalPosition.y

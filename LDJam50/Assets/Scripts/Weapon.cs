@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot && !manager.IsPaused)
+        if (Input.GetMouseButton(0) && canShoot && !manager.IsPaused)
         {
             FireWeapon();
             StartCoroutine(WeaponCooldownCoroutine());

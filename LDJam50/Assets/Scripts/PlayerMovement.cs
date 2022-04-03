@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     Rigidbody2D rb2d;
     GameManager manager;
+    float horizontal;
+    float vertical;
+    float moveLimiter = 0.7f;
 
     private void Start()
     {
@@ -17,14 +20,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!manager.IsPaused)
         {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
 
             Vector3 step = new Vector3(horizontal, vertical, 0);
             step = step.normalized;
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + step * speed, speed * Time.deltaTime);
 
-            rb2d.AddForce(step * speed * Time.deltaTime);
-        }
+        } 
         
 
     }
