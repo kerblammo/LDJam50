@@ -75,8 +75,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EnemyDefeated()
+    public void EnemyDefeated(int cashReward)
     {
+        currency += cashReward;
         int defeatedEnemies = 0;
         foreach (Enemy enemy in enemies)
         {

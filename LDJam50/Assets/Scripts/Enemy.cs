@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] Collider2D playerChase;
     [SerializeField] float health;
     bool isDefeated = false;
+    [SerializeField] int cashReward = 10;
     public bool IsDefeated { get => isDefeated; }
 
     private void Start()
@@ -103,7 +104,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         isDefeated = true;
-        manager.EnemyDefeated();
+        manager.EnemyDefeated(cashReward);
         DeActivate();
     }
 }
