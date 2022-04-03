@@ -2339,15 +2339,9 @@ MonoBehaviour:
       cost: 1000
   damage:
     Levels:
-    - value: 1.25
-      cost: 100
-    - value: 1.5
-      cost: 200
     - value: 2
-      cost: 400
-    - value: 2.5
-      cost: 600
-    - value: 3.5
+      cost: 500
+    - value: 3
       cost: 1000
 --- !u!114 &750898117
 MonoBehaviour:
