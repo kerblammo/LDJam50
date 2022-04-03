@@ -2315,15 +2315,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rateOfFire:
     Levels:
-    - value: 1.8
-      cost: 100
-    - value: 1.6
-      cost: 200
     - value: 1.4
-      cost: 400
+      cost: 100
     - value: 1.2
+      cost: 200
+    - value: 1
+      cost: 400
+    - value: 0.8
       cost: 600
-    - value: 0.75
+    - value: 0.5
       cost: 1000
   projectiles:
     Levels:
