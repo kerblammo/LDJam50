@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] float spawnLinearGrowth;
     [SerializeField] float spawnExponentialGrowth;
     [SerializeField] int waveCount = 0;
+    [SerializeField] int spawnLimit = 200;
     [SerializeField] List<Collider2D> spawnZones;
     public void NextWave()
     {
@@ -17,6 +18,7 @@ public class Spawner : MonoBehaviour
     public List<Enemy> SpawnWave()
     {
         int enemiesToSpawn = (int)(spawnCount + (waveCount * spawnLinearGrowth) + (Mathf.Pow(spawnExponentialGrowth, waveCount)));
+        if (enemiesToSpawn > spawnLimit) { enemiesToSpawn = spawnLimit; }
         List<Enemy> enemies = new List<Enemy>();
         for (int i = 0; i < enemiesToSpawn; i++)
         {
