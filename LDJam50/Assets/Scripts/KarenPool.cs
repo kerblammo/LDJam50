@@ -16,7 +16,6 @@ public class KarenPool : MonoBehaviour
         for (int i = 0; i < size; i++)
         {
             int roll = Random.Range(0, karenPrefabs.Count);
-            Debug.Log(roll);
             tmp = karenPrefabs[roll];
             tmp = Instantiate(tmp, transform);
             tmp.SetActive(false);

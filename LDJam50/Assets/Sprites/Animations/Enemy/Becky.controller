@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cabbfe9b98bcbf74ca464bfa15038929, type: 2}
+  m_Motion: {fileID: 7400000, guid: 874f4f747bf8b014eb738f444999aaf0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -83,7 +83,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Karen
+  m_Name: Becky
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Flee
@@ -132,7 +132,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6433f7414c066d3409e483d8677827a8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5ebb71f1089df6845900148004725871, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

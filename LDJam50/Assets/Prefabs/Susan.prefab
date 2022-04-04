@@ -8,17 +8,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 351728865029064358, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
-      propertyPath: m_Color.b
-      value: 0.13950695
-      objectReference: {fileID: 0}
-    - target: {fileID: 351728865029064358, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
-      propertyPath: m_Color.g
-      value: 0.16828823
-      objectReference: {fileID: 0}
-    - target: {fileID: 351728865029064358, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
-      propertyPath: m_Color.r
-      value: 0.5377358
-      objectReference: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2821135513045882955, guid: fc970068c4f968548ad2a31d66acbe65, type: 3}
+    - target: {fileID: 3288931330675303160, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 32aa05fc91bf8a24db504cca55de6d53, type: 2}
     - target: {fileID: 3687588792466878994, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
       propertyPath: m_Name
       value: Susan

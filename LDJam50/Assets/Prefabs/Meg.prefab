@@ -8,17 +8,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 351728865029064358, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
-      propertyPath: m_Color.b
-      value: 0.24670699
-      objectReference: {fileID: 0}
-    - target: {fileID: 351728865029064358, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
-      propertyPath: m_Color.g
-      value: 0.6792453
-      objectReference: {fileID: 0}
-    - target: {fileID: 351728865029064358, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
-      propertyPath: m_Color.r
-      value: 0.31949058
-      objectReference: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4362663699585960488, guid: 88bca644fa124fc4fa03b83ddec77421, type: 3}
+    - target: {fileID: 3288931330675303160, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9229bda3c7dfff8418ad811b89cdb2c5, type: 2}
     - target: {fileID: 3687588792466878994, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
       propertyPath: m_Name
       value: Meg
