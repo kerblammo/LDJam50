@@ -46,6 +46,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        manager.PauseGame();
+        manager.GameOver();
     }
 }
