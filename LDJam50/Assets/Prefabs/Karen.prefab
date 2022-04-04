@@ -236,7 +236,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5e082e641e737654996c5342c6d77d75, type: 3}
+  m_Sprite: {fileID: -5516540703973142382, guid: 4853ee7557f814641a8e72ed96ea02ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -263,6 +263,7 @@ MonoBehaviour:
   playerAggro: {fileID: 5568137196009696963}
   playerChase: {fileID: 3593603994811767514}
   health: 3
+  startingHealth: 0
   cashReward: 10
   hitSound: {fileID: 8706874222649881988}
   fleeSound: {fileID: 3491427968152036180}

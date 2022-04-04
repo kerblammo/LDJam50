@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cabbfe9b98bcbf74ca464bfa15038929, type: 2}
+  m_Motion: {fileID: 7400000, guid: c9bda1815b2d8424892a0c85f7fc8abc, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -83,7 +83,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Karen
+  m_Name: Susan
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Flee
@@ -132,7 +132,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6433f7414c066d3409e483d8677827a8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 74057972bbf520f4888fb3cf40832656, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -152,7 +152,7 @@ AnimatorStateMachine:
     m_Position: {x: 475.94824, y: 135.72955, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5023273042358839262}
-    m_Position: {x: 526.32605, y: -20.707031, z: 0}
+    m_Position: {x: 520, y: -20, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

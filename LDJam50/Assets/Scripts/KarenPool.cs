@@ -5,7 +5,7 @@ using UnityEngine;
 public class KarenPool : MonoBehaviour
 {
     List<GameObject> karens;
-    [SerializeField] GameObject karen;
+    [SerializeField] List<GameObject> karenPrefabs;
     int poolSize;
 
     public void CreatePool(int size)
@@ -15,7 +15,9 @@ public class KarenPool : MonoBehaviour
         GameObject tmp;
         for (int i = 0; i < size; i++)
         {
-            tmp = Instantiate(karen, transform);
+            int roll = Random.Range(0, karenPrefabs.Count);
+            tmp = karenPrefabs[roll];
+            tmp = Instantiate(tmp, transform);
             tmp.SetActive(false);
             karens.Add(tmp);
         }
