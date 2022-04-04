@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] public WeaponProperties properties;
     [SerializeField] BulletPool bulletPool;
     [SerializeField] int bulletPoolSize = 100;
+    [SerializeField] AudioSource shootSound;
     GameManager manager;
 
     bool canShoot;
@@ -55,6 +56,7 @@ public class Weapon : MonoBehaviour
 
     private void FireWeapon()
     {
+        shootSound.Play();
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
         Vector3 origin = mousePosition - transform.position;
