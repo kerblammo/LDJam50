@@ -11,6 +11,12 @@ public class Spawner : MonoBehaviour
     [SerializeField] int waveCount = 0;
     [SerializeField] int spawnLimit = 200;
     [SerializeField] List<Collider2D> spawnZones;
+    [SerializeField] KarenPool pool;
+
+    void Awake()
+    {
+        pool.CreatePool(spawnLimit);
+    }
     public void NextWave()
     {
         waveCount++;
@@ -23,8 +29,8 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < enemiesToSpawn; i++)
         {
             Vector3 spawnPoint = CalculateRandomSpawnPosition();
-            Enemy karen = Instantiate(enemy, spawnPoint, Quaternion.identity);
-            enemies.Add(karen);
+            GameObject karen = pool.Instantiate(spawnPoint, Quaternion.identity);
+            enemies.Add(karen.GetComponent<Enemy>());
         }
 
         return enemies;

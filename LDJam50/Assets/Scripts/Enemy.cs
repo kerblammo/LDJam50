@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] Collider2D playerAggro;
     [SerializeField] Collider2D playerChase;
     [SerializeField] float health;
+    [SerializeField] float startingHealth;
     bool isDefeated = false;
     [SerializeField] int cashReward = 10;
     [SerializeField] AudioSource hitSound;
@@ -21,19 +22,34 @@ public class Enemy : MonoBehaviour
     Animator animator;
     public bool IsDefeated { get => isDefeated; }
 
-    private void Start()
+    private void Awake()
     {
+        startingHealth = health;
         manager = FindObjectOfType<GameManager>();
         animator = GetComponent<Animator>();
+        
     }
     public void DeActivate()
     {
         GetComponent<Collider2D>().enabled = false;
     }
+
+    public void ReturnToPool()
+    {
+        health = startingHealth;
+        transform.position = Vector3.zero;
+        isDefeated = false;
+        activated = false;
+        gameObject.SetActive(false);
+    }
     public void Activate()
     {
         GetComponent<Collider2D>().enabled = true;
         activated = true;
+        isDefeated = false;
+
+        animator.SetTrigger("Walk");
+        
     }
     public void AcquireTarget()
     {
