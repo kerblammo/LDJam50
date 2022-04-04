@@ -24,6 +24,7 @@ public class ShopUI : MonoBehaviour
     [SerializeField] List<GameObject> projectileElements;
     [SerializeField] GameObject damageSoldOut;
     [SerializeField] List<GameObject> damageElements;
+    [SerializeField] PASystem paSystem;
     Shop shop;
     GameManager manager;
 
@@ -33,9 +34,15 @@ public class ShopUI : MonoBehaviour
         manager = FindObjectOfType<GameManager>();
         shop = GetComponent<Shop>();
     }
+
+    private void Awake()
+    {
+        RefreshValues();
+    }
     private void OnEnable()
     {
         RefreshValues();
+        paSystem.PlayRandomLine();
     }
 
     void RefreshValues()
