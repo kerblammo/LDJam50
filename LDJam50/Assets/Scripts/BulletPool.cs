@@ -31,6 +31,9 @@ public class BulletPool : MonoBehaviour
             {
                 bullets[i].transform.position = position;
                 bullets[i].transform.rotation = rotation;
+                Vector3 scale = bullets[i].transform.localScale;
+                scale.x = Mathf.Abs(scale.x);
+                bullets[i].transform.localScale = scale;
                 bullets[i].gameObject.SetActive(true);
                 
                 return bullets[i];

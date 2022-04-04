@@ -20,13 +20,22 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    public void Shoot(Vector3 target, float damage)
+
+    public void Shoot(Vector3 target, int i, int projectileCount, float damage)
     {
         this.target = target;
         this.damage = damage;
-        rb.AddForce(target * speed);
         float rot_z = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
+
+        float spread = 2;
+        float addedOffset = (i - (projectileCount / 2)) * spread;
+        transform.rotation = Quaternion.Euler(transform.localEulerAngles.x,
+                                              transform.localEulerAngles.y,
+                                              transform.localEulerAngles.z + addedOffset
+                                              );
+
+        rb.AddForce(transform.right * speed);
         StartCoroutine(CleanUpSelfCoroutine());
     }
 
