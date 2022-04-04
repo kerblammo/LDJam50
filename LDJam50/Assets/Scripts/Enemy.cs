@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] int cashReward = 10;
     [SerializeField] AudioSource hitSound;
     [SerializeField] AudioSource fleeSound;
+    [SerializeField] GameObject curseDecal;
     Animator animator;
     public bool IsDefeated { get => isDefeated; }
 
@@ -40,7 +41,9 @@ public class Enemy : MonoBehaviour
         transform.position = Vector3.zero;
         isDefeated = false;
         activated = false;
+        curseDecal.SetActive(false);
         gameObject.SetActive(false);
+        
     }
     public void Activate()
     {
@@ -143,6 +146,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         isDefeated = true;
+        curseDecal.SetActive(true);
         manager.EnemyDefeated(cashReward);
         DeActivate();
         fleeSound.Play();

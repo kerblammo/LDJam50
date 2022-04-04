@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ce60c93ed6b7e5242bf234bd4254310a, type: 2}
+    - target: {fileID: 3670582428802901242, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 26327c45f9d3c5e4590086a3160ff964, type: 3}
     - target: {fileID: 3687588792466878994, guid: 33b706fa8a21c1a438de6a0dce27484b, type: 3}
       propertyPath: m_Name
       value: Becky
