@@ -63,10 +63,11 @@ public class Weapon : MonoBehaviour
         origin = origin.normalized * properties.spreadFactor;
         List<Vector3> targets = CalculateSpread(origin);
 
-        foreach (Vector3 target in targets)
+        for (int i = 0; i < targets.Count; i++)
         {
+            Vector3 target = targets[i];
             Bullet projectile = bulletPool.Instantiate(transform.position, Quaternion.identity);
-            projectile.Shoot(target.normalized, properties.damage);
+            projectile.Shoot(origin, i, properties.projectileCount, properties.damage);
         }
         
     }
