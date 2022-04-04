@@ -18,6 +18,7 @@ public class BulletPool : MonoBehaviour
         {
             tmp = Instantiate(bullet, transform);
             tmp.gameObject.SetActive(false);
+            tmp.AssignParent(transform);
             bullets.Add(tmp);
         }
     }
