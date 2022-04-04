@@ -7,6 +7,7 @@ public class DefensivePoint : MonoBehaviour
     bool isDestroyed = false;
     [SerializeField] int rescueValue = 25;
     [SerializeField] Sprite destroyedSprite;
+    [SerializeField] AudioSource crashSound;
     public int RescueValue { get => rescueValue; }
 
     public bool IsDestroyed() => isDestroyed;
@@ -15,6 +16,7 @@ public class DefensivePoint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            crashSound.Play();
             isDestroyed = true;
             GetComponent<SpriteRenderer>().sprite = destroyedSprite;
             Enemy[] enemies = FindObjectsOfType<Enemy>();
