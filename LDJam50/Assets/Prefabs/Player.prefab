@@ -106,6 +106,8 @@ MonoBehaviour:
     projectileCount: 3
     damage: 1
     spreadFactor: 10
+  bulletPool: {fileID: 0}
+  bulletPoolSize: 100
 --- !u!114 &7314700391340477939
 MonoBehaviour:
   m_ObjectHideFlags: 0

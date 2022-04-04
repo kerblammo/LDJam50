@@ -7,12 +7,15 @@ public class Weapon : MonoBehaviour
     [SerializeField] Texture2D cursor;
     [SerializeField] Bullet bullet;
     [SerializeField] public WeaponProperties properties;
+    [SerializeField] BulletPool bulletPool;
+    [SerializeField] int bulletPoolSize = 100;
     GameManager manager;
 
     bool canShoot;
 
     void Start()
     {
+        bulletPool.CreatePool(bulletPoolSize);
         int cursorSize = 32;
         Vector2 hotspot = new Vector2(cursorSize / 2, cursorSize / 2);
         Cursor.SetCursor(cursor, hotspot, CursorMode.ForceSoftware);
@@ -60,7 +63,7 @@ public class Weapon : MonoBehaviour
 
         foreach (Vector3 target in targets)
         {
-            Bullet projectile = Instantiate(bullet, transform.position, Quaternion.identity);
+            Bullet projectile = bulletPool.Instantiate(transform.position, Quaternion.identity);
             projectile.Shoot(target.normalized, properties.damage);
         }
         

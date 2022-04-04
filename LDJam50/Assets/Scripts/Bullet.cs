@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     float damage;
     Vector3 target;
     Rigidbody2D rb;
+    Transform stickToTarget;
 
     void Awake()
     {
@@ -27,7 +28,18 @@ public class Bullet : MonoBehaviour
     IEnumerator CleanUpSelfCoroutine()
     {
         yield return new WaitForSeconds(maximumLifeSpan);
-        Destroy(gameObject);
+        GetComponent<Collider2D>().enabled = true;
+        gameObject.SetActive(false);
+        stickToTarget = null;
+    }
+
+    void Update()
+    {
+        if (stickToTarget != null)
+        {
+            transform.position = stickToTarget.position;
+        } 
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -50,8 +62,9 @@ public class Bullet : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             rb.velocity = Vector3.zero;
             rb.angularVelocity = 0;
-            transform.parent = enemy.transform;
+            stickToTarget = enemy.transform;
             StopAllCoroutines();
+            StartCoroutine(CleanUpSelfCoroutine());
             
             
         }
