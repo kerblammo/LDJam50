@@ -401,6 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 73429273}
   - component: {fileID: 73429272}
+  - component: {fileID: 73429274}
   m_Layer: 0
   m_Name: PA System
   m_TagString: Untagged
@@ -518,6 +519,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &73429274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73429271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29c76e1a00fee4cbf602db37753ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 73429272}
+  chime: {fileID: 8300000, guid: e6be5c0215a529c4c97b74b446c81b23, type: 3}
+  systemLines:
+  - {fileID: 8300000, guid: 6eb6a40750fc9b5499713fb77de277db, type: 3}
+  - {fileID: 8300000, guid: 096da91a41775b34d9445260d9179b74, type: 3}
+  - {fileID: 8300000, guid: b9b57b530a28a084c90bc6e61d364358, type: 3}
+  - {fileID: 8300000, guid: 92cf5df46d6e0504cb8e41db5455c664, type: 3}
+  - {fileID: 8300000, guid: 235cdb7cf680acd4db449a4166e5464f, type: 3}
+  - {fileID: 8300000, guid: 053931b47d756f74f8c5ba88bf481bc7, type: 3}
+  - {fileID: 8300000, guid: 4d165c596aa47b7408d9c81fe2acd7f9, type: 3}
+  - {fileID: 8300000, guid: 2af7f409169707d48bf083a1530af94c, type: 3}
+  - {fileID: 8300000, guid: c989e32bcc2aaf043bbfed263e1e04e2, type: 3}
+  - {fileID: 8300000, guid: 452bcfa8f0099b54bb9a31eb1406d9ab, type: 3}
+  - {fileID: 8300000, guid: 29860277cf254214a9897dd1554aedae, type: 3}
+  - {fileID: 8300000, guid: a8a89387b0b57d840a9bbcf901ac3df4, type: 3}
 --- !u!1 &74940159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,7 +2827,6 @@ GameObject:
   - component: {fileID: 750898114}
   - component: {fileID: 750898116}
   - component: {fileID: 750898117}
-  - component: {fileID: 750898118}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -2951,34 +2978,7 @@ MonoBehaviour:
   - {fileID: 280096492}
   - {fileID: 1461479512}
   - {fileID: 1501936442}
-  paSystem: {fileID: 750898118}
---- !u!114 &750898118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750898112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29c76e1a00fee4cbf602db37753ce6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 73429272}
-  chime: {fileID: 8300000, guid: e6be5c0215a529c4c97b74b446c81b23, type: 3}
-  systemLines:
-  - {fileID: 8300000, guid: 6eb6a40750fc9b5499713fb77de277db, type: 3}
-  - {fileID: 8300000, guid: 096da91a41775b34d9445260d9179b74, type: 3}
-  - {fileID: 8300000, guid: b9b57b530a28a084c90bc6e61d364358, type: 3}
-  - {fileID: 8300000, guid: 92cf5df46d6e0504cb8e41db5455c664, type: 3}
-  - {fileID: 8300000, guid: 235cdb7cf680acd4db449a4166e5464f, type: 3}
-  - {fileID: 8300000, guid: 053931b47d756f74f8c5ba88bf481bc7, type: 3}
-  - {fileID: 8300000, guid: 4d165c596aa47b7408d9c81fe2acd7f9, type: 3}
-  - {fileID: 8300000, guid: 2af7f409169707d48bf083a1530af94c, type: 3}
-  - {fileID: 8300000, guid: c989e32bcc2aaf043bbfed263e1e04e2, type: 3}
-  - {fileID: 8300000, guid: 452bcfa8f0099b54bb9a31eb1406d9ab, type: 3}
-  - {fileID: 8300000, guid: 29860277cf254214a9897dd1554aedae, type: 3}
-  - {fileID: 8300000, guid: a8a89387b0b57d840a9bbcf901ac3df4, type: 3}
+  paSystem: {fileID: 73429274}
 --- !u!1 &868577356
 GameObject:
   m_ObjectHideFlags: 0
