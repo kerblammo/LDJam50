@@ -8,10 +8,18 @@ public class PASystem : MonoBehaviour
     [SerializeField] AudioClip chime;
     [SerializeField] List<AudioClip> systemLines;
     int cachedRandom = 0;
+    bool hasStarted = false;
 
     public void PlayRandomLine()
     {
-        StartCoroutine(AwaitLinePlaying());
+        if (!hasStarted)
+        {
+            hasStarted = true;
+        } else
+        {
+            StartCoroutine(AwaitLinePlaying());
+        }
+        
     }
 
     IEnumerator AwaitLinePlaying()
