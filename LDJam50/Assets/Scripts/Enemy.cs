@@ -101,8 +101,10 @@ public class Enemy : MonoBehaviour
             {
                 target = preferredTarget;
             }
+            Vector3 point = target.transform.position;
+            point.z = transform.position.z;
             transform.position = Vector3.MoveTowards(transform.position, 
-                                                     target.transform.position, 
+                                                     point, 
                                                      speed * Time.deltaTime);
 
             float lookDirection;

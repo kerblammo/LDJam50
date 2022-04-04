@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Spawner spawner;
     List<Enemy> enemies;
     [SerializeField] GameObject shopUI;
+    [SerializeField] GameObject gameOverUI;
     [SerializeField] int RoundSurvivedBonus = 100;
     [SerializeField] float SpawnEnemiesWindow = 10f;
     bool isPaused = false;
@@ -126,6 +128,16 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void GameOver()
+    {
+        PauseGame();
+        gameOverUI.SetActive(true);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void CloseShop()
     {
         shopUI.SetActive(false);
