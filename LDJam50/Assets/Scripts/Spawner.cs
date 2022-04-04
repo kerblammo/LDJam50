@@ -9,7 +9,14 @@ public class Spawner : MonoBehaviour
     [SerializeField] float spawnLinearGrowth;
     [SerializeField] float spawnExponentialGrowth;
     [SerializeField] int waveCount = 0;
+    [SerializeField] int spawnLimit = 200;
     [SerializeField] List<Collider2D> spawnZones;
+    [SerializeField] KarenPool pool;
+
+    void Awake()
+    {
+        pool.CreatePool(spawnLimit);
+    }
     public void NextWave()
     {
         waveCount++;
@@ -17,12 +24,13 @@ public class Spawner : MonoBehaviour
     public List<Enemy> SpawnWave()
     {
         int enemiesToSpawn = (int)(spawnCount + (waveCount * spawnLinearGrowth) + (Mathf.Pow(spawnExponentialGrowth, waveCount)));
+        if (enemiesToSpawn > spawnLimit) { enemiesToSpawn = spawnLimit; }
         List<Enemy> enemies = new List<Enemy>();
         for (int i = 0; i < enemiesToSpawn; i++)
         {
             Vector3 spawnPoint = CalculateRandomSpawnPosition();
-            Enemy karen = Instantiate(enemy, spawnPoint, Quaternion.identity);
-            enemies.Add(karen);
+            GameObject karen = pool.Instantiate(spawnPoint, Quaternion.identity);
+            enemies.Add(karen.GetComponent<Enemy>());
         }
 
         return enemies;

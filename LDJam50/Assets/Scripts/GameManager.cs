@@ -78,6 +78,12 @@ public class GameManager : MonoBehaviour
     public void EnemyDefeated(int cashReward)
     {
         currency += cashReward;
+        StartCoroutine(CheckRoundEnd());
+    }
+
+    IEnumerator CheckRoundEnd()
+    {
+        yield return new WaitForSeconds(1f);
         int defeatedEnemies = 0;
         foreach (Enemy enemy in enemies)
         {
@@ -104,7 +110,7 @@ public class GameManager : MonoBehaviour
     {
         foreach(Enemy enemy in enemies)
         {
-            Destroy(enemy.gameObject, 1f);
+            enemy.ReturnToPool();
         }
         OpenShop();
     }
